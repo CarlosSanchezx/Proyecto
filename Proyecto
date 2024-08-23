@@ -1,0 +1,11 @@
+using UnityEngine;
+
+public class HolaMundo : MonoBehaviour
+{
+    // Esta función se llama cuando el script se inicia
+    void Start()
+    {
+        // Imprime "Hola mundo" en la consola
+        Debug.Log("Hola mundo");
+    }
+}
