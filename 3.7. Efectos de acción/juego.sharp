@@ -1,0 +1,39 @@
+csharp
+Copiar código
+using UnityEngine;
+
+public class Misil : MonoBehaviour
+{
+    public float velocidad = 10f; // Velocidad del misil
+    public GameObject explosionPrefab; // Prefab de la explosión
+    public ParticleSystem rastroParticulas; // Sistema de partículas para el rastro
+
+    private Rigidbody2D rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        rb.velocity = transform.up * velocidad; // Mueve el misil hacia arriba
+    }
+
+    void Update()
+    {
+        // Aquí puedes añadir efectos adicionales, si es necesario
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Instanciar la explosión al colisionar
+        Instantiate(explosionPrefab, transform.position, transform.rotation);
+        Destroy(gameObject); // Destruir el misil
+    }
+
+    private void OnDestroy()
+    {
+        // Detener el sistema de partículas si está en uso
+        if (rastroParticulas != null)
+        {
+            rastroParticulas.Stop();
+        }
+    }
+}
