@@ -1,0 +1,12 @@
+public class PlayerCollision : MonoBehaviour
+{
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Manejo de colisiones
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("Colisión con un obstáculo");
+            // Lógica para manejar la colisión
+        }
+    }
+}

@@ -1,0 +1,32 @@
+// En Unity, en el script del controlador de la escena principal
+using UnityEngine;
+
+public class MainScene : MonoBehaviour
+{
+    public GameObject player; // Referencia al personaje
+    public Camera mainCamera; // Referencia a la cámara
+
+    void Start()
+    {
+        // Configura el personaje y la cámara al inicio
+        SetupPlayer();
+        SetupCamera();
+    }
+
+    void SetupPlayer()
+    {
+        // Inicializa el jugador, si es necesario
+    }
+
+    void SetupCamera()
+    {
+        // Configura la cámara para que siga al jugador
+        mainCamera.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, mainCamera.transform.position.z);
+    }
+
+    void Update()
+    {
+        // Actualiza la posición de la cámara
+        mainCamera.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, mainCamera.transform.position.z);
+    }
+}
