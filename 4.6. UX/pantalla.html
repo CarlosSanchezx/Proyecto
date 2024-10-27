@@ -1,0 +1,15 @@
+<div id="settingsMenu" class="menu" style="display:none;">
+    <h2>Configuraciones</h2>
+    <label for="audio">Volumen:</label>
+    <input type="range" id="audio" min="0" max="100" value="50">
+    
+    <label for="graphics">Calidad Gráfica:</label>
+    <select id="graphics">
+        <option value="low">Baja</option>
+        <option value="medium">Media</option>
+        <option value="high">Alta</option>
+    </select>
+    
+    <button onclick="applySettings()">Guardar Configuraciones</button>
+    <button onclick="closeSettings()">Volver</button>
+</div>
